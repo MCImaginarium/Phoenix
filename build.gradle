@@ -26,18 +26,18 @@ apply plugin: 'java'
 apply plugin: 'net.minecraftforge.gradle.patcher'
 apply plugin: 'net.minecraftforge.gradle.launch4j'
 
-group = 'djoveryde.phoenix'
+group = 'MCImaginarium'
 version = '0.0.1'
 
-//afterEvaluate {
-//	patchPhoenixJar.addInject file('bukkit/src/main/java/')
-//}
+afterEvaluate {
+	patchPhoenixJar.addInject file('bukkit/src/main/java/')
+}
 
-//tasks.whenTaskAdded	{ task ->
-//	if(task.name.equals("genPhoenixPatches")) {
-//		task.addOriginalSource file('bukkit/src/main/java/')
-//	}
-//}
+tasks.whenTaskAdded	{ task ->
+	if(task.name.equals("genPhoenixPatches")) {
+		task.addOriginalSource file('bukkit/src/main/java/')
+	}
+}
 
 dependencies {
 	compile 'commons-lang:commons-lang:2.6'
